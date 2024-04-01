@@ -1,11 +1,15 @@
 const holes = document.querySelectorAll(".hole");
 const moles = document.querySelectorAll(".mole");
 const startButton = document.querySelector("#start");
+
 // TODO: Add the missing query selectors:
 const score = document.querySelector("#score"); // Use querySelector() to get the score element
 console.log(score);
 const timerDisplay = document.querySelector("#timer"); // use querySelector() to get the timer element.
 console.log(timerDisplay);
+
+const audioHit = new Audio("../assets/hit.mp3");
+const song = new Audio("../assets/snowsong.mp3");
 
 let time = 0;
 let timer;
@@ -13,6 +17,18 @@ let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
 
+//functions created so song can be played when game starts, and stopped when game ends.//
+function playAudio(audioObject) {
+  audioObject.play();
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play() {
+  playAudio(song);
+}
 /**
  * Generates a random integer within a range.
  *
@@ -232,6 +248,9 @@ function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
   updateScore();
+  // play wack sound
+  // moles.play() {
+  //   playAudio(audioHit);}
   return points;
 }
 
@@ -267,7 +286,7 @@ function setDuration(duration) {
  *
  */
 function stopGame() {
-  // stopAudio(song);  //optional
+  stopAudio(song); //optional
   clearInterval(timer);
   return "game stopped";
 }
@@ -279,7 +298,8 @@ function stopGame() {
  *
  */
 function startGame() {
-  setDuration(10);
+  setDuration(60);
+  //game duration set to 60 seconds//
   startTimer();
   showUp();
   return "game started";
