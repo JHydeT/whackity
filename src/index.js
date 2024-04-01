@@ -287,6 +287,18 @@ function startGame() {
 
 startButton.addEventListener("click", startGame);
 
+function popTuts() {
+  const tutties = ["tutty1", "tutty2"];
+  moles.forEach((mole) => {
+    //random tut is being grabbed
+    const tutty = tutties[Math.floor(Math.random() * tutties.length)];
+    //mole is adding in either tutty 1 or 2 as a class
+    mole.classList.add(tutty);
+  });
+}
+
+popTuts();
+
 // Please do not modify the code below.
 // Used for testing purposes.
 window.randomInteger = randomInteger;
