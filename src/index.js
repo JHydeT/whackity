@@ -9,7 +9,9 @@ const timerDisplay = document.querySelector("#timer"); // use querySelector() to
 console.log(timerDisplay);
 
 const audioHit = new Audio("../assets/hit.mp3");
-const song = new Audio("../assets/snowsong.mp3");
+const song = new Audio(
+  "https://github.com/JHydeT/whackity/raw/main/assets/snowsong.mp3"
+);
 
 let time = 0;
 let timer;
@@ -28,6 +30,10 @@ function stopAudio(audioObject) {
 
 function play() {
   playAudio(song);
+}
+
+function gunShot() {
+  playAudio(audioHit);
 }
 /**
  * Generates a random integer within a range.
@@ -248,9 +254,7 @@ function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
   updateScore();
-  // play wack sound
-  // moles.play() {
-  //   playAudio(audioHit);}
+  gunShot();
   return points;
 }
 
