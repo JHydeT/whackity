@@ -8,7 +8,7 @@ console.log(score);
 const timerDisplay = document.querySelector("#timer"); // use querySelector() to get the timer element.
 console.log(timerDisplay);
 
-const audioHit = new Audio("../assets/hit.mp3");
+const audioHit = new Audio("../assets/gun.mp3");
 const song = new Audio(
   "https://github.com/JHydeT/whackity/raw/main/assets/snowsong.mp3"
 );

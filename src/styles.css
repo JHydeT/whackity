@@ -41,12 +41,11 @@ h2 {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  cursor: url('../assets/mallet.png'), pointer;
+  cursor: url('../assets/shooter.png'), pointer;
+  /* cursor: grab; */
   /* margin edited so all 9 holes can be seen */
-  margin: auto;
-  position: relative;
-  top: -100px;
-  /* padding-bottom: 100px; */
+  margin:-100px auto auto;
+  scale: 70%;
 }
 
 .hole {
@@ -88,8 +87,6 @@ h2 {
 .mole.tutty2{
   background: url('../assets/tutty2.png') bottom center no-repeat;
 }
-
-
 
 .hole.show .mole {
   top: 0;
